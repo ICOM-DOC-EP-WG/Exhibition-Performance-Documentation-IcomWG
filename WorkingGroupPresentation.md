@@ -1,6 +1,6 @@
 The working group was formally established this year. After our initial meetings, the scope and direction of our work have become clearer. The following outlines our three-year program.
 
-### Organizational Context
+## Organizational Context
 
 The working group is part of [ICOM Documentation](https://icom-documentation.mini.icom.museum/) (formerly CIDOC), one of ICOM's 35 international committees. CIDOC supports the museum community by providing guidance on good practice and developments in museum documentation. Following updates to the ICOM statutes in 2023, all international committees are required to adopt and harmonize their bylaws, and working groups are now asked to present a working plan. CIDOC's updated bylaws were approved during the 2025 AGM. 
 
@@ -12,7 +12,7 @@ The [Exhibition and Performance Documentation Working Group](https://icom-docume
 - Vice-Chair: Alexandre Matos (Porto, Portugal)
 - Founding chair: Gabriel Moore Forell Bevilacqua (Universidade Federal Fluminense, Brazil)
 
-### General Aims
+## General Aims
 
 **Our main goal** is to provide guidelines to museum professionals on how to carry out exhibition and performance documentation.
 
@@ -42,6 +42,16 @@ The overall trajectory is: *build together, think together, share with the world
 - Jan–Jul: Share documentation strategies for preserving exhibitions and performances and ensuring future access
 - Jul–Nov: Organize a working group event to present findings and collectively define new objectives at the ICOM documentation Conference
 - Dec: Final report
+
+## This year goal : 2026
+
+We currently have 63 members, there is 5-10 really active members with whom we've identified three main priorities for the year.
+
+The first is building a shared Zotero bibliography on the documentation of exhibitions and performances. The work involves setting a template to determine which metadata to include or exclude for each entry, and defining a workflow for cleaning and organizing the data. We're also discussing whether to publish reading summaries or critical notes on GitHub alongside the bibliography itself. We are working on a first draft to share. 
+
+The second task is mapping our network by compiling a list of relevant projects in museums and universities. We've drafted a template for entries, covering the project title, type, institutional affiliation, team members and their roles, a short abstract, dates, languages, geographical information, links, and tags for identification. The goal is to get a clearer picture of who is doing what, and where. We did it with a csv but we are working on a wikidata template for people to share their project we could then share on our website. 
+
+The third task is developing shared conceptual definitions of exhibitions and performances to clearly delimit the scope of our work. Before writing definitions, we needed to decide exactly what terms we are defining: exhibition, exhibition documentation, performance, performance documentation. We'll also want to take stock of existing definitions before drafting our own. Three axes are guiding this work: first, defining the process from display to archives; second, articulating the medium, whether live, static, or experiential; and third, understanding the institutional context, from private collections to public institutions and hybrid environments.
 
 ------
 
