@@ -242,8 +242,6 @@ N'hésitez pas à regarder la fiche d'un projet déjà bien documenté pour vous
 
 Et encore une fois : vous ne pouvez rien casser. Si quelque chose ne va pas, un administrateur peut toujours corriger ou annuler une modification.
 
-Je lance les deux en parallèle.
-
 ------
 
 ## Cómo referenciar un proyecto en Wikidata: guía paso a paso
@@ -516,70 +514,37 @@ Cette requete plus complète ne fonctionne pas :
 ```
 SELECT DISTINCT
   ?project
-  (SAMPLE(?projectLabel) AS ?title)
+  ?projectLabel
+  ?description
   (GROUP_CONCAT(DISTINCT ?typeLabel; SEPARATOR=", ") AS ?type)
   (GROUP_CONCAT(DISTINCT ?affiliationLabel; SEPARATOR=", ") AS ?affiliation)
-  (GROUP_CONCAT(DISTINCT ?memberInfo; SEPARATOR="; ") AS ?teamMembers)
-  (SAMPLE(?description) AS ?description)
-  (SAMPLE(?dates) AS ?dates)
-  (GROUP_CONCAT(DISTINCT ?languageLabel; SEPARATOR=", ") AS ?languages)
+  (GROUP_CONCAT(DISTINCT ?memberLabel; SEPARATOR="; ") AS ?teamMembers)
+  (SAMPLE(?startDate) AS ?start)
+  (SAMPLE(?endDate) AS ?end)
   (GROUP_CONCAT(DISTINCT ?countryLabel; SEPARATOR=", ") AS ?country)
+  (SAMPLE(?coordinates) AS ?coordinates)
   (GROUP_CONCAT(DISTINCT ?link; SEPARATOR=", ") AS ?links)
-  (GROUP_CONCAT(DISTINCT ?tagLabel; SEPARATOR=", ") AS ?tags)
+  (GROUP_CONCAT(DISTINCT ?subjectLabel; SEPARATOR=", ") AS ?subjects)
 WHERE {
-  # Filtre : Q788790 obligatoire + au moins un autre
   ?project wdt:P921 wd:Q788790 .
   ?project wdt:P921 ?otherSubject .
-  VALUES ?otherSubject { wd:Q464980 wd:Q35140 wd:Q213156}
+  VALUES ?otherSubject { wd:Q464980 wd:Q35140 wd:Q213156 }
 
-  # Labels pour le projet et ses propriétés
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],fr,en". }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "fr,en". }
 
-  # Type de projet (P31)
-  OPTIONAL { ?project wdt:P31 ?type . }
-
-  # Affiliation (P1416)
-  OPTIONAL { ?project wdt:P1416 ?affiliation . }
-
-  # Description
   OPTIONAL { ?project schema:description ?description .
-             FILTER(LANG(?description) = "fr" || LANG(?description) = "en") }
-
-  # Dates (début/fin) → Calculées ici avec BIND
+             FILTER(LANG(?description) IN ("fr", "en")) }
+  OPTIONAL { ?project wdt:P31 ?type . }
+  OPTIONAL { ?project wdt:P1416 ?affiliation . }
   OPTIONAL { ?project wdt:P571 ?startDate . }
   OPTIONAL { ?project wdt:P576 ?endDate . }
-  BIND(COALESCE(
-    CONCAT(?startDate, IF(BOUND(?endDate), CONCAT(" – ", ?endDate), "")),
-    "Inconnu"
-  ) AS ?dates)
-
-  # Langues (P407)
-  OPTIONAL { ?project wdt:P407 ?language . }
-
-  # Pays (P17)
   OPTIONAL { ?project wdt:P17 ?country . }
-
-  # Lien officiel (P856)
+  OPTIONAL { ?project wdt:P625 ?coordinates . }
   OPTIONAL { ?project wdt:P856 ?link . }
-
-  # Tags (main subjects P921 + instance of P31)
-  OPTIONAL { ?project wdt:P921 ?tag . }
-  OPTIONAL { ?project wdt:P31 ?tag2 . }
-
-  # Membres de l'équipe avec rôles (P50 + qualifier P3831)
-  OPTIONAL {
-    ?project p:P50 ?authorStatement .
-    ?authorStatement ps:P50 ?member .
-    OPTIONAL { ?authorStatement pq:P3831 ?role . }
-    BIND(CONCAT(
-      COALESCE(STR(?memberLabel), STRAFTER(STR(?member), "entity/")),
-      IF(BOUND(?role), CONCAT(" (", COALESCE(STR(?roleLabel), STRAFTER(STR(?role), "entity/")), ")"), "")
-    ) AS ?memberInfo)
-  }
-
-  FILTER(LANG(?projectLabel) = "fr" || LANG(?projectLabel) = "en")
+  OPTIONAL { ?project wdt:P921 ?subject . }
+  OPTIONAL { ?project wdt:P50 ?member . }
 }
-GROUP BY ?project
+GROUP BY ?project ?projectLabel ?description
 LIMIT 100
 ```
 

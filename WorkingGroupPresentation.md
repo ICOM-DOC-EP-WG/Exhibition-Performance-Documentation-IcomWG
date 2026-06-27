@@ -8,9 +8,9 @@ The [Exhibition and Performance Documentation Working Group](https://icom-docume
 
 **Leadership:**
 
-- Chair: Zoë Renaudie (Montréal, Canada)
-- Vice-Chair: Alexandre Matos (Porto, Portugal)
-- Founding chair: Gabriel Moore Forell Bevilacqua (Universidade Federal Fluminense, Brazil)
+- coordinator : Zoë Renaudie (Montréal, Canada)
+- vice-coordinator : Alexandre Matos (Porto, Portugal)
+- founding coordinator : Gabriel Moore Forell Bevilacqua (Universidade Federal Fluminense, Brazil)
 
 ## General Aims
 
@@ -53,12 +53,14 @@ The second task is mapping our network by compiling a list of relevant projects 
 
 The third task is developing shared conceptual definitions of exhibitions and performances to clearly delimit the scope of our work. Before writing definitions, we needed to decide exactly what terms we are defining: exhibition, exhibition documentation, performance, performance documentation. We'll also want to take stock of existing definitions before drafting our own. Three axes are guiding this work: first, defining the process from display to archives; second, articulating the medium, whether live, static, or experiential; and third, understanding the institutional context, from private collections to public institutions and hybrid environments.
 
+
 ------
 
 ### Shared Workspaces
 
 - **Discord** (day-to-day collaboration): https://discord.gg/PWPFeu3xzT Each task group has a dedicated forum channel.
-- **GitHub** (shared documentation and meeting minutes): https://github.com/ICOM-DOC-EP-WG/Exhibition-Performance-Documentation-IcomWG
-- **Mailing list:** epwg-whole@googlegroups.com
-- **Zotero** (shared bibliography): https://www.zotero.org/groups/6441975/exhibition_and_performance_documentation/collections/E562XEZF/collection
+- **GitHub** (all the shared documentation, guidelines and meeting minutes): https://github.com/ICOM-DOC-EP-WG/Exhibition-Performance-Documentation-IcomWG 
+- **Mailing list** (you will write to the all group writing to this address) : epwg-whole@googlegroups.com
+- **Zotero** (shared bibliography you can add entries to): https://www.zotero.org/groups/6441975/exhibition_and_performance_documentation/collections/E562XEZF/collection
 - **Google Drive** (ask for access) : https://drive.google.com/drive/folders/1OFixKlPyo3rjgtH9bi7A_wL0UWbWPXCD?usp=drive_link
+- **Our website!** : https://icom-doc-ep-wg.github.io/blog/
