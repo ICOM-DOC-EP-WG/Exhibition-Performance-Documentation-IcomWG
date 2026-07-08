@@ -5,7 +5,7 @@
 
 ------
 
-## **🌐 ONLINE (Web) Workflow**
+## **ONLINE (Web) Workflow**
 
 *No installation required. Works in any browser.*
 
